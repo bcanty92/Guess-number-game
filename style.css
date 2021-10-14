@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.title h2 {
+    text-align: center;
+    font-size: 4rem;
+}
+
+.title p {
+    font-size: 2.5rem;
+}
+
+.results p {
+    font-size: 2rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.animation {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+.contents {
+    padding: 40px;
+    background-color: black;
+    width: 90vw;
+    margin: 15px;
+    border-radius: 15px;
+}
+
+.subtitle {
+    margin-top: 10px;
+    display: none;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 2rem;
+    transition: 0.5s;
+    border: 2px solid #000000;
+}
+
+input[type="number"]::placeholder {
+    font-size: 2rem;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border: 2px solid purple;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.inputs {
+    display: flex;
+    margin-top: 40px;
+}
+
+.playBtn, .playAgainBtn {
+    width: 50%;
+    text-transform: uppercase;
+    padding: 10px 10px;
+    background-color: purple;
+    border-radius: 5px;
+    margin-left: 5px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    outline-color: transparent;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.3);
+}
+
+.playBtn:hover {
+    transition: background-color 0.5s ease-in-out;
+    background-color:purple;
+}
+
+.playAgainBtn {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.playAgainBtn:hover {
+    transition: background-color 0.5s ease-in-out;
+    background-color: purple;
+}
+
+.attempt, .result {
+    margin-top: 35px;
+}
+
+@media screen and (max-width: 570px) {
+    input[type="number"]::-webkit-input-placeholder {
+        color: transparent;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    input[type='number'] {
+        width: 70%;
+    }
+    .inputs {
+        margin: 40px auto;
+    }
+    .playAgainBtn {
+        width: 50%;
+    }
+}
